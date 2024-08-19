@@ -17,7 +17,7 @@ public class Acumuladores {
                 // Si algún elemento no es múltiplo del número, marca como falso
                 if (mat[fila][elem] % num != 0) {
                     esMultiploEnTodaLaFila = false;
-                    break;
+                    //break;
                 }
             }
 
