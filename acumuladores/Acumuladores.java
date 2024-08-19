@@ -9,11 +9,11 @@ public class Acumuladores {
     
         boolean existeFilaConMultiplos = false; // Acumulador booleano
     
-        for (int i = 0; i < mat.length; i++) {
+        for (int fila = 0; fila < mat.length; fila++) {
             boolean todosMultiplos = true;
     
-            for (int j = 0; j < mat[i].length; j++) {
-                if (mat[i][j] % num != 0) {
+            for (int elem = 0; elem < mat[fila].length; elem++) {
+                if (mat[fila][elem] % num != 0) {
                     todosMultiplos = false;
                 }
             }
@@ -49,14 +49,8 @@ public class Acumuladores {
 
             // Acumulamos el resultado de esta fila en nuestro acumulador booleano
             todasFilasTienenInterseccion = todasFilasTienenInterseccion && hayInterseccion;
-
-            // Si en alguna fila no hay intersección, podemos terminar temprano
-            // if (!todasFilasTienenInterseccion) {
-            //     return false;
-            // }
         }
 
-        // Si el acumulador booleano sigue siendo verdadero, todas las filas tienen intersección
         return todasFilasTienenInterseccion;
     }
 
