@@ -3,31 +3,27 @@ package acumuladores;
 public class Acumuladores {
 
     public boolean todosMultiplosEnAlgunaFila(int[][] mat, int num) {
-        // Verifica si la matriz está vacía o si el número no es positivo
         if (mat == null || mat.length == 0 || num <= 0) {
             return false;
         }
-
-        // Recorre cada fila de la matriz
-        for (int fila = 0; fila < mat.length; fila++) {
-            boolean esMultiploEnTodaLaFila = true;
-
-            // Recorre cada elemento de la fila actual
-            for (int elem = 0; elem < mat[fila].length; elem++) {
-                // Si algún elemento no es múltiplo del número, marca como falso
-                if (mat[fila][elem] % num != 0) {
-                    esMultiploEnTodaLaFila = false;
+    
+        boolean existeFilaConMultiplos = false; // Acumulador booleano
+    
+        for (int i = 0; i < mat.length; i++) {
+            boolean todosMultiplos = true;
+    
+            for (int j = 0; j < mat[i].length; j++) {
+                if (mat[i][j] % num != 0) {
+                    todosMultiplos = false;
                 }
             }
-
-            // Si todos los elementos de la fila son múltiplos del número, devuelve verdadero
-            if (esMultiploEnTodaLaFila) {
-                return true;
-            }
+    
+            // Acumulamos el resultado para todas las filas
+            existeFilaConMultiplos = existeFilaConMultiplos || todosMultiplos;
         }
-
-        // Si ninguna fila cumple la condición, devuelve falso
-        return false;
+    
+        // Si no encontramos ninguna fila que cumpla, retornamos false
+        return existeFilaConMultiplos;
     }
 
     public boolean hayInterseccionPorFila(int[][] mat1, int[][] mat2) {
