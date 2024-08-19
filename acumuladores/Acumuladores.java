@@ -22,7 +22,6 @@ public class Acumuladores {
             existeFilaConMultiplos = existeFilaConMultiplos || todosMultiplos;
         }
     
-        // Si no encontramos ninguna fila que cumpla, retornamos false
         return existeFilaConMultiplos;
     }
 
@@ -52,9 +51,9 @@ public class Acumuladores {
             todasFilasTienenInterseccion = todasFilasTienenInterseccion && hayInterseccion;
 
             // Si en alguna fila no hay intersección, podemos terminar temprano
-            if (!todasFilasTienenInterseccion) {
-                return false;
-            }
+            // if (!todasFilasTienenInterseccion) {
+            //     return false;
+            // }
         }
 
         // Si el acumulador booleano sigue siendo verdadero, todas las filas tienen intersección
