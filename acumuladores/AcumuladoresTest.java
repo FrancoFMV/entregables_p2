@@ -164,28 +164,28 @@ public class AcumuladoresTest {
 
 	@Test
 	public void ej4_siHayinterseccionEnCadaColumna_RetornaTrue() {
-		assertTrue(acum.hayInterseccionPorFila(mat, mat));
-		assertTrue(acum.hayInterseccionPorFila(mat, matConInterseccionPorColumna));
-		assertTrue(acum.hayInterseccionPorFila(matConInterseccionPorColumna, mat));
+		assertTrue(acum.hayInterseccionPorColumna(mat, mat));
+		assertTrue(acum.hayInterseccionPorColumna(mat, matConInterseccionPorColumna));
+		assertTrue(acum.hayInterseccionPorColumna(matConInterseccionPorColumna, mat));
 
 	}
 
 	@Test
 	public void ej4_siNoHayInterseccionEnCadaColumna_RetornaFalse() {
-		assertFalse(acum.hayInterseccionPorFila(mat, matSinInterseccionPorColumna));
-		assertFalse(acum.hayInterseccionPorFila(matSinInterseccionPorColumna, mat));
+		assertFalse(acum.hayInterseccionPorColumna(mat, matSinInterseccionPorColumna));
+		assertFalse(acum.hayInterseccionPorColumna(matSinInterseccionPorColumna, mat));
 	}
 
 	@Test
 	public void ej4_siNoTienenMismaCantidadDeColumnas_RetornaFalse() {
-		assertFalse(acum.hayInterseccionPorFila(mat, matConDistintaCantColumnas));
-		assertFalse(acum.hayInterseccionPorFila(matConDistintaCantColumnas, mat));
+		assertFalse(acum.hayInterseccionPorColumna(mat, matConDistintaCantColumnas));
+		assertFalse(acum.hayInterseccionPorColumna(matConDistintaCantColumnas, mat));
 	}
 
 	@Test
 	public void ej4_siAlgunaMatrizEstaVacia_RetornaFalse() {
-		assertFalse(acum.hayInterseccionPorFila(mat, vacia));
-		assertFalse(acum.hayInterseccionPorFila(vacia, mat));
-		assertFalse(acum.hayInterseccionPorFila(vacia, vacia));
+		assertFalse(acum.hayInterseccionPorColumna(mat, vacia));
+		assertFalse(acum.hayInterseccionPorColumna(vacia, mat));
+		assertFalse(acum.hayInterseccionPorColumna(vacia, vacia));
 	}
 }
